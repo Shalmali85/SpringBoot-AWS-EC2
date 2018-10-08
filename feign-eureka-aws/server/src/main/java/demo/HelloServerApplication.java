@@ -14,12 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaServer
 @RestController
 public class HelloServerApplication {
-	@Autowired
-	DiscoveryClient client;
+	
 
 	@RequestMapping("/test")
 	public String hello() {
-		ServiceInstance localInstance = client.getLocalServiceInstance();
 		return "Hello World:";
 	}
 

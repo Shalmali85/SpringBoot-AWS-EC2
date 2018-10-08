@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: HelloServer
+
+
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    serviceUrl:
+          defaultZone: http://ip-172-31-25-134.us-east-2.compute.internal:8761/eureka/
+server:
+  port: 8080
+
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: server-test-1985

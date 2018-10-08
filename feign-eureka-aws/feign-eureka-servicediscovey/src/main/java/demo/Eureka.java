@@ -21,8 +21,7 @@ import org.springframework.context.annotation.Profile;
  */
 @SpringBootApplication
 @EnableEurekaServer
-//@EnableContextCredentials(accessKey = "AKIAIJBNWHY4SLPZSYHQ", secretKey ="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" )
-//@EnableContextRegion(region = "us-east-2")
+
 public class Eureka {
 
 

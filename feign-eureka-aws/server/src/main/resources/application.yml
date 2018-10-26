@@ -7,16 +7,18 @@ eureka:
   server:
     enable-self-preservation: false
   instance:
-    hostname: localhost
+    ip-address: ${HOST_NAME}
+    preferIpAddress: true
+    non-secure-port: 80
   client:
     fetch-registry: false
     register-with-eureka: true
     serviceUrl:
-          defaultZone: http://ip-172-31-25-134.us-east-2.compute.internal:8761/eureka/
+          defaultZone: http://ec2-18-222-101-42.us-east-2.compute.amazonaws.com:8761/eureka/
 server:
   port: 8080
 
   instance:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
-      instanceId: server-test-1985
+      hostname: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}

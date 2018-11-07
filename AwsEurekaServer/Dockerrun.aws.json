@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "name/aws-eureka-server:1.0.0",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "8080"
+    }
+  ],
+  "Volumes": [
+    {
+      "HostDirectory": "/var/app",
+      "ContainerDirectory": "/etc"
+    }
+  ],
+  "Logging": "/var/log/nginx"
+}

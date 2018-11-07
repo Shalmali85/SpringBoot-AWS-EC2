@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: NotificationService
+
+spring.jpa:
+  database: mysql
+  hibernate.ddl-auto: update
+  show-sql: true
+  dialect: org.hibernate.dialect.MySQL5Dialect
+  #dialect: org.hibernate.dialect.H2Dialect
+
+
+spring.datasource:
+  platform: mysql
+  driverClassName: com.mysql.cj.jdbc.Driver
+  #driverClassName: org.h2.Driver
+  url: ${DATABASE_URL}
+  #url: jdbc:h2:mem:test
+  username: ${USER_NAME}
+  password: ${PASSWORD}
+  useSSL: false
+
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    ip-address: ${HOST_NAME}
+    preferIpAddress: true
+    non-secure-port: 80
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+          defaultZone: ${EUREKA_SERVER_HOST}
+server:
+  port: 8080
+
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      hostname: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}

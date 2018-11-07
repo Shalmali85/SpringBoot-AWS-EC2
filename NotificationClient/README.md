@@ -1,0 +1,1 @@
+The project demonstrates service discovery in aws ec2/beanstalk using docker . Please refer to NotificationClient document for details 
